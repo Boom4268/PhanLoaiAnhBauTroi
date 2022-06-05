@@ -4,6 +4,7 @@ import numpy as np
 BIN_SIZE = 16
 MOMENT_SIZE = 9
 
+# hàm trích xuất các đặc trưng
 def color_moment(image):
     chanels = cv.split(image)
     features = []
@@ -17,12 +18,14 @@ def color_moment(image):
         features.extend([c_mean, c_std, c_thirMoment])
     return features
 
+# hàm tính khoảng cách đặc trưng của hai bức ảnh
 def distance_moment_color(features_of_image1, features_of_image2):
     dist = 0;
     for i in range(MOMENT_SIZE):
         dist += abs(features_of_image1[i] - (features_of_image2[i]))
     return round(dist, 6)
 
+# hàm chuẩn hóa histogram (không dùng)
 def normalized_color_histogram(image):
     w, h, chanel = image.shape[:3]
     #print(w, h, chanel)

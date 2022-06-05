@@ -9,7 +9,7 @@ fileName = 'data.csv'
 WIDTH = 255
 HEIGHT = 160
 
-#handle function
+
 def image_proccess(image):
     new_image = cv.cvtColor(image, cv.COLOR_BGR2RGB)
     new_image = cv.resize(new_image, dsize=(WIDTH, HEIGHT))

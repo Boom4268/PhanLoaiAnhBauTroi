@@ -4,6 +4,7 @@ import cv2 as cv
 from FeatureExtraction import *
 import os
 
+# đọc dữ liệu từ file csv
 def write_to_file(fileName):
     file = open(fileName, 'w')
     fileWrite = csv.writer(file)
@@ -24,6 +25,7 @@ def write_to_file(fileName):
             fileWrite.writerow(colorMM)
     file.close()
 
+# ghi dữ liệu trong file csv
 def read_data(fileName):
     file = open(fileName, 'r')
     fileRead = csv.reader(file)

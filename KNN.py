@@ -3,15 +3,17 @@ from ReadFile import *
 from FeatureExtraction import *
 import cv2 as cv
 
+# thuật toán KNN
 def KNN(data, pointA, k=1):
     #tính khoảng cách
     list = []
     for point in data:
         dist = distance_moment_color(point['feature'], pointA)
-        list.append({'dist': dist, 'label': point['label'], 'path': point['path']})
+        list.append({'dist': dist, 'label': point['label'], 'path': point['path']})#
     list.sort(key=lambda x: x['dist'])
     return list[:k]
 
+# phân loại nhãn: nhãn có số lượng cao nhất trong k bức ảnh sẽ lấy để làm nhãn
 def mostLabel(list):
     res = ''
     rate = 0
