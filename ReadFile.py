@@ -37,6 +37,6 @@ def read_data(fileName):
             data.append({'feature': features, 'label': r[10], 'path': r[11]})
     return data;
 
-write_to_file('data.csv')
+#write_to_file('data.csv')
 # data = read_data('data.csv')
 # print(data[0])
