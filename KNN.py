@@ -9,7 +9,7 @@ def KNN(data, pointA, k=1):
     list = []
     for point in data:
         dist = distance_moment_color(point['feature'], pointA)
-        list.append({'dist': dist, 'label': point['label'], 'path': point['path']})#
+        list.append({'dist': dist, 'label': point['label'], 'path': point['path']})
     list.sort(key=lambda x: x['dist'])
     return list[:k]
 
